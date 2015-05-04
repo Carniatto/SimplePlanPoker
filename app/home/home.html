@@ -1,0 +1,49 @@
+<div>
+    <div class="container">
+        <div class="row">
+        <h2 ng-show="user.userName">User Name: {{user.userName}}</h2>
+            <div class="col-sm-12 text-center" ng-hide="user.userName">
+                <input type="text" placeholder="type your name" ng-model="name"></input>
+                <button type="button" class="btn btn-primary" ng-click="setUserName(name)">Set User</button>
+             </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <input type="text" placeholder="type room name" ng-model="room.name"></input>
+                <button type="button" class="btn btn-primary" ng-click="createRoom(room.name)">Create a Room</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-sm-4 col-sm-offset-4">
+                <table class="table">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Room Name</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="room in rooms">
+                            <td>{{room.name}}</td>
+                            <td>
+                                 <button type="button" class="btn btn-primary" ng-click="joinRoom($index)">Join</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div ng-hide="true">
+    <form class="form-signin" role="form">
+        <input ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
+        <label class="checkbox">
+            <a href="#"> Sign Up</a>
+        </label>
+        <button type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
+    </form>
+</div> -->

@@ -1,0 +1,16 @@
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3><u>{{user.userName}}</u></h3>
+                <h3 ng-repeat="u in fetchUsers()" ng-hide="user.userName == u.userName">{{u.userName}}</h3>
+            </div>
+            <div class="col-sm-8">
+                <h1>{{room.roomName}}</h1>
+                <button type="button" class="btn btn-primary" ng-repeat="card in cards" ng-click="selectCard(card)">{{card}}</button>
+                <h1>{{data.text}}</h1>
+            </div>
+
+        </div>
+    </div>
+</div>
