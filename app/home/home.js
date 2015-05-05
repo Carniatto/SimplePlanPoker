@@ -2,74 +2,68 @@
 
 angular.module('myApp')
 
-.controller('HomeCtrl', ['$scope', '$firebaseObject','$location','userProvider',
-    function($scope, $firebaseObject, $location, userProvider) {
-        var ref = new Firebase("http://fiery-heat-6689.firebaseio.com/pokerPlanOnline");
+.value('fbURL', 'http://fiery-heat-6689.firebaseio.com/pokerPlanOnline/')
 
-        var roomRef = ref.child("rooms");
-        $scope.rooms = $firebaseObject(roomRef);
-        $scope.user = userProvider.getRegistredUser();
+.service('fbRef', function(fbURL) {
+    return new Firebase(fbURL)
+})
 
-        $scope.SignIn = function(e) {
-            e.preventDefault();
-            var username = $scope.user.email;
-            var password = $scope.user.password;
-            $scope.firebaseObj.authWithPassword({
-                email: username,
-                password: password
-            }, function(error, authData) {
-                if (error) {
-                    console.log("Login Failed!", error);
-                } else {
-                    console.log("Authenticated successfully with payload:", authData);
-                    $scope.islogged = true;
-                }
-            });
-        };
+.controller('HomeCtrl', ['$scope', '$firebaseObject', '$location', 'room', 'user', '$cookies',
+    function($scope, $firebaseObject, $location, room, user, $cookies) {
 
-        $scope.go = function(path){
+        $scope.user = user.current;
+
+        $scope.rooms = room.getRooms();
+
+        $scope.go = function(path) {
             $location.path(path);
         };
 
         $scope.createRoom = function(name) {
-            console.log($scope.rooms);
-            $scope.rooms.push({
-                'name': name,
-                'type': '',
-                'users' : []
-            });
-            $scope.rooms.$save();
+            $scope.rooms = room.createRoom(name);
         };
 
         $scope.joinRoom = function(roomId) {
-            if(!$scope.data.rooms[roomId].users){
-                $scope.data.rooms[roomId].users = [];
-            }
-            $scope.data.rooms[roomId].users.push({
-                'userName' : $scope.user.userName
-            });
+            room.enterRoom($scope.user, roomId);
             $scope.go('room/' + roomId);
         };
 
-        $scope.setUserName = function(name){
-            userProvider.registerUser(name);
-            $scope.user = userProvider.getRegistredUser();
+        $scope.setUserName = function(name) {
+            $scope.nameEdit = false;
+            $scope.user.$save();
         };
 
     }
 ])
 
-.service('userProvider', [function ($firebaseObject) {
-    var up = this;
-    up.user = {};
+.service('user', function(fbRef, $firebaseObject, $cookies) {
+    var self = this;
+    self.ref = fbRef.child("users");
 
-    up.registerUser = function(name){
-        up.user = {
-            'userName' : name,
-            'vote' : ''
-        };
+    self.createUser = function(name) {
+        var reff = self.ref.push({
+            'name': name
+        });
+        console.log($firebaseObject(reff));
+        return $firebaseObject(reff);
     };
-    up.getRegistredUser = function(){
-        return up.user;
+    self.getUser = function(userId) {
+        console.log(userId);
+        return $firebaseObject(self.ref.child(userId));
+        
     };
-}]);
+
+    //init
+    var uid = $cookies.userId;
+    if (!uid) {
+        var user = self.createUser(' ');
+        $cookies.userId = user.$id;
+        user.name = 'anonymous' + user.$id;
+        user.$save();
+        self.current = user;
+    } else {
+        self.current = self.getUser(uid);
+    }
+    //init end
+    
+});

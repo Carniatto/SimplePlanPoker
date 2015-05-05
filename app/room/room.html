@@ -1,16 +1,23 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
-                <h3><u>{{user.userName}}</u></h3>
-                <h3 ng-repeat="u in fetchUsers()" ng-hide="user.userName == u.userName">{{u.userName}}</h3>
+            <div class="col-sm-4">
+                <div ng-repeat="u in room.users">
+                    <h3>{{u.name}}<div class="glyphicon glyphicon-ok" ng-show="u.vote"/></h3>
+                    <h3 ng-show="revealVote">{{u.vote}}</h3>
+                </div>
             </div>
             <div class="col-sm-8">
-                <h1>{{room.roomName}}</h1>
-                <button type="button" class="btn btn-primary" ng-repeat="card in cards" ng-click="selectCard(card)">{{card}}</button>
+                <h1>{{room.name}}</h1>
+                <button type="button" class="btn btn-primary" ng-disabled="voted" ng-repeat="card in cards" ng-click="selectCard(card)">{{card}}</button>
                 <h1>{{data.text}}</h1>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <button type="button" class="btn btn-warning" ng-click="revealVotes(card)">Reveal Votes</button>
+                <button type="button" class="btn btn-warning" ng-click="restartRound(card)">Restart Round</button>
+            </div>
         </div>
     </div>
 </div>

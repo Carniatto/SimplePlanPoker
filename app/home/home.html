@@ -1,10 +1,13 @@
 <div>
     <div class="container">
         <div class="row">
-        <h2 ng-show="user.userName">User Name: {{user.userName}}</h2>
-            <div class="col-sm-12 text-center" ng-hide="user.userName">
-                <input type="text" placeholder="type your name" ng-model="name"></input>
-                <button type="button" class="btn btn-primary" ng-click="setUserName(name)">Set User</button>
+        <div class="col-sm-12 text-center" ng-hide="nameEdit">
+            <h2 ng-hide="nameEdit">User Name: {{user.name}}</h2>
+            <a href="" ng-click="nameEdit=true">change</a>
+        </div>
+            <div class="col-sm-12 text-center" ng-show="nameEdit">
+                <input type="text" placeholder="type your name" ng-model="user.name"></input>
+                <button type="button" class="btn btn-primary" ng-click="setUserName(name)">change</button>
              </div>
         </div>
         <br>
@@ -24,10 +27,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="room in rooms">
+                        <tr ng-repeat="(id, room) in rooms">
                             <td>{{room.name}}</td>
                             <td>
-                                 <button type="button" class="btn btn-primary" ng-click="joinRoom($index)">Join</button>
+                                 <button type="button" class="btn btn-primary" ng-click="joinRoom(id)">Join</button>
                             </td>
                         </tr>
                     </tbody>

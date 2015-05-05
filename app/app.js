@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', ['ngRoute', 'firebase']).
+angular.module('myApp', ['ngRoute', 'firebase', 'ngCookies']).
 config(['$routeProvider',
     function($routeProvider) {
 
