@@ -5,7 +5,7 @@ angular.module('myApp')
 .value('fbURL', 'http://fiery-heat-6689.firebaseio.com/pokerPlanOnline/')
 
 .service('fbRef', function(fbURL) {
-    return new Firebase(fbURL)
+    return new Firebase(fbURL);
 })
 
 .controller('HomeCtrl', ['$scope', '$firebaseObject', '$location', 'room', 'user', '$cookies',
@@ -20,11 +20,15 @@ angular.module('myApp')
         };
 
         $scope.createRoom = function(name) {
-            $scope.rooms = room.createRoom(name);
+            room.createRoom(name).$loaded().then(function(room){
+                $scope.rooms = room;
+                $scope.joinRoom(room.$id);
+            });
+
         };
 
         $scope.joinRoom = function(roomId) {
-            room.enterRoom($scope.user, roomId);
+//            room.enterRoom($scope.user, roomId);
             $scope.go('room/' + roomId);
         };
 
@@ -44,13 +48,11 @@ angular.module('myApp')
         var reff = self.ref.push({
             'name': name
         });
-        console.log($firebaseObject(reff));
         return $firebaseObject(reff);
     };
     self.getUser = function(userId) {
-        console.log(userId);
         return $firebaseObject(self.ref.child(userId));
-        
+
     };
 
     //init
@@ -65,5 +67,5 @@ angular.module('myApp')
         self.current = self.getUser(uid);
     }
     //init end
-    
+
 });
