@@ -20,6 +20,7 @@ function HomeCtrl($cookies, UserService, RoomService, RouteService) {
     vm.setUserName = setUserName;
 
     function createRoom(name) {
+        console.log('teste');
         RoomService.createRoom(name).$loaded().then(function(room) {
             vm.rooms = room;
             vm.joinRoom(room.$id);

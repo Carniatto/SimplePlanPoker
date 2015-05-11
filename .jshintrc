@@ -1,5 +1,5 @@
 {
-  "globalstrict": true,
+  "globalstrict": false,
   "globals": {
     "angular": false,
     "describe": false,
@@ -10,6 +10,7 @@
     "module": false,
     "inject": false,
     "Firebase":false,
-    "console":false
+    "console":false,
+    require: false
   }
 }

@@ -1,5 +1,12 @@
 'use strict';
 
+require('angular');
+require('angular-route');
+require('angular-cookies');
+require('firebase');
+require('angularFire');
+
+
 function config($routeProvider) {
         $routeProvider.otherwise({
             redirectTo: '/home'
