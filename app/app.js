@@ -1,22 +1,23 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', ['ngRoute', 'firebase', 'ngCookies']).
-config(['$routeProvider',
-    function($routeProvider) {
-
+function config($routeProvider) {
         $routeProvider.otherwise({
             redirectTo: '/home'
         });
 
         $routeProvider.when('/home', {
-            templateUrl: 'home/home.html',
-            controller: 'HomeCtrl'
+            templateUrl: 'views/home.html',
+            controller: 'HomeCtrl',
+            controllerAs: 'home'
         });
 
         $routeProvider.when('/room/:roomId', {
-            templateUrl: 'room/room.html',
-            controller: 'RoomCtrl'
+            templateUrl: 'views/room.html',
+            controller: 'RoomCtrl',
+            controllerAs: 'room'
         });
     }
-]);
+
+// Declare app level module which depends on views, and components
+angular.module('ppo', ['ngRoute', 'firebase', 'ngCookies']).
+config(config);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="ppo" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +20,15 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
     <script src="app.js"></script>
-    <script src="home/home.js"></script>
-    <script src="room/room.js"></script>
+    <script src="scripts/controllers/HomeCtrl.js"></script>
+    <script src="scripts/controllers/RoomCtrl.js"></script>
+    <script src="scripts/services/FirebaseService.js"></script>
+    <script src="scripts/services/RoomService.js"></script>
+    <script src="scripts/services/RouteService.js"></script>
+    <script src="scripts/services/UserService.js"></script>
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>

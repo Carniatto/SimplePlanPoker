@@ -1,5 +1,5 @@
 {
-  "name": "angular-seed",
+  "name": "pokerPlanOnline",
   "private": true,
   "version": "0.0.0",
   "description": "A starter project for AngularJS",
@@ -16,7 +16,7 @@
     "postinstall": "bower install",
 
     "prestart": "npm install",
-  "start": "http-server -a 0.0.0.0 -p 8000 -c-1",
+    "start": "http-server -a 0.0.0.0 -p 8000 -c-1",
 
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
