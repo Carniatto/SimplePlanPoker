@@ -32,3 +32,62 @@
 h2 {
   text-align: center;
 }
+
+.pokerCard {
+  position: relative;
+  margin-left: -60px;
+  float: left;
+  border: 6px solid black;
+  width: 140px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.pokerCard:first-child{
+  margin-left: 0;
+}
+
+.pokerCard:hover{
+  z-index: 99;
+  cursor: pointer;
+}
+
+.pokerCard .ribbon {
+  background-color: #fff;
+  width: 100px;
+  height: 2px;
+  position: absolute;
+  top: 27px;
+  left: 18px;
+}
+.pokerCard .ribbon:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  top: -11px;
+  left: 0px;
+  background-color: #fff;
+}
+.pokerCard .ribbonValue {
+  color: black;
+  font-weight: bold;
+  width: 23px;
+  text-align: center;
+  font-size: 8px;
+  position: absolute;
+  top: 22px;
+  left: 18px;
+}
+.pokerCard .value {
+  position: absolute;
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  width: 130px;
+  top: 66px;
+  left: 0px;
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div ng-repeat="(k,u) in room.users">
                     <div class="glyphicon glyphicon-tower" ng-show="room.owner == k"></div>
                     <div class="glyphicon glyphicon-user" ng-hide="room.owner == k"></div>
@@ -9,14 +9,24 @@
                     <div class="glyphicon glyphicon-ok" ng-show="u.vote"></div>
                     <div ng-show="room.revealVote">{{u.vote}}</div>
                 </div>
-                <button type="button" class="btn btn-warning center" ng-click="exitRoom()">Exit</button>
+                <br />
+                <button type="button" class="btn btn-warning text-center" ng-click="exitRoom()">Exit</button>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <h1>{{room.name}}</h1>
-                <button type="button" class="btn btn-primary" ng-disabled="user.vote && card != user.vote" ng-repeat="card in cards" ng-click="selectCard(card)">{{card}}</button>
+                <br />
+                <div>
+                    <div class="pokerCard" ng-click="selectCard(card)" ng-repeat="card in cards">
+                      <div class="ribbon"></div>
+                      <div class="ribbonValue">{{card}}</div>
+                      <div class="value">{{card}}</div>
+                    </div>
+                </div>
                 <h1>{{data.text}}</h1>
             </div>
         </div>
+        <br />
+        <br />
         <div class="row">
             <div class="col-sm-8 col-sm-offset-4">
                 <button type="button" class="btn btn-warning" ng-click="revealVotes(card)" ng-show="user.$id == room.owner">Reveal Votes</button>
