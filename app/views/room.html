@@ -1,0 +1,39 @@
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div ng-repeat="(k,u) in room.room.users">
+                    <div class="glyphicon glyphicon-tower" ng-show="room.room.owner == k"></div>
+                    <div class="glyphicon glyphicon-user" ng-hide="room.room.owner == k"></div>
+                    {{u.name}}
+                    <div class="glyphicon glyphicon-ok" ng-show="u.vote"></div>
+                    <div ng-show="room.room.revealVote">{{u.vote}}</div>
+                    {{u.name}}
+                    <div class="glyphicon glyphicon-ok" ng-show="u.vote"></div>
+                    <div ng-show="room.room.revealVote">{{u.vote}}</div>
+                </div>
+                <button type="button" class="btn btn-warning center" ng-click="room.exitRoom()">Exit</button>
+            </div>
+            <div class="col-sm-9">
+                <h1>{{room.name}}</h1>
+                <br />
+                <div>
+                    <div class="pokerCard" ng-click="selectCard(card)" ng-repeat="card in cards">
+                      <div class="ribbon"></div>
+                      <div class="ribbonValue">{{card}}</div>
+                      <div class="value">{{card}}</div>
+                    </div>
+                </div>
+                <h1>{{data.text}}</h1>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-4">
+                <button type="button" class="btn btn-warning" ng-click="room.revealVotes(card)" ng-show="room.user.$id == room.room.owner">Reveal Votes</button>
+                <button type="button" class="btn btn-warning" ng-click="room.restartRound(card)" ng-show="room.user.$id == room.room.owner">Restart Round</button>
+            </div>
+        </div>
+    </div>
+</div>
