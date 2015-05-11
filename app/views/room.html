@@ -1,13 +1,10 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div ng-repeat="(k,u) in room.room.users">
                     <div class="glyphicon glyphicon-tower" ng-show="room.room.owner == k"></div>
                     <div class="glyphicon glyphicon-user" ng-hide="room.room.owner == k"></div>
-                    {{u.name}}
-                    <div class="glyphicon glyphicon-ok" ng-show="u.vote"></div>
-                    <div ng-show="room.room.revealVote">{{u.vote}}</div>
                     {{u.name}}
                     <div class="glyphicon glyphicon-ok" ng-show="u.vote"></div>
                     <div ng-show="room.room.revealVote">{{u.vote}}</div>
@@ -18,7 +15,7 @@
                 <h1>{{room.name}}</h1>
                 <br />
                 <div>
-                    <div class="pokerCard" ng-click="selectCard(card)" ng-repeat="card in cards">
+                    <div class="pokerCard" ng-click="room.selectCard(card)" ng-repeat="card in room.cards">
                       <div class="ribbon"></div>
                       <div class="ribbonValue">{{card}}</div>
                       <div class="value">{{card}}</div>
