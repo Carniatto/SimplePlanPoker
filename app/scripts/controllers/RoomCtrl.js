@@ -23,7 +23,7 @@ function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService
 
     });
 
-    vm.cards = ["0", "1/2", "1", "2", "3", "5", "8", "13", "20"];
+    vm.cards = ["?","0", "1/2", "1", "2", "3", "5", "8", "13", "20"];
 
     vm.selectCard = selectCard;
 
@@ -33,8 +33,14 @@ function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService
 
     vm.exitRoom = exitRoom;
 
+
     function selectCard(card) {
-        vm.room.users[UserService.current.$id].vote = card;
+        if(vm.room.users[UserService.current.$id].vote === card){
+            vm.room.users[UserService.current.$id].vote = '';
+        } else {
+            vm.room.users[UserService.current.$id].vote = card;
+        }
+        vm.user = RoomService.users[UserService.current.$id];
         vm.room.$save();
     }
 

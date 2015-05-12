@@ -35,13 +35,15 @@ h2 {
 
 .pokerCard {
   position: relative;
-  margin-left: -60px;
+  margin-left: -75px;
   float: left;
   border: 6px solid black;
   width: 140px;
   height: 200px;
   border-radius: 10px;
-  background-color: blue;
+  background-color: royalblue;
+  transition: all;
+  transition-duration: 0.5s;
 }
 
 .pokerCard:first-child{
@@ -49,8 +51,15 @@ h2 {
 }
 
 .pokerCard:hover{
-  z-index: 99;
   cursor: pointer;
+  z-index: 99;
+  background-color: firebrick;
+  bottom: 30px;
+}
+.pokerCard.selected{
+  z-index: 99;
+  background-color: firebrick;
+  bottom: 30px;
 }
 
 .pokerCard .ribbon {
@@ -73,12 +82,12 @@ h2 {
 }
 .pokerCard .ribbonValue {
   color: black;
-  font-weight: bold;
+  font-weight: 800;
   width: 23px;
   text-align: center;
-  font-size: 8px;
+  font-size: 12px;
   position: absolute;
-  top: 22px;
+  top: 19px;
   left: 18px;
 }
 .pokerCard .value {

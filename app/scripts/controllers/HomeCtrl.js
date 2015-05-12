@@ -19,6 +19,8 @@ function HomeCtrl($cookies, UserService, RoomService, RouteService) {
 
     vm.setUserName = setUserName;
 
+    vm.removeRoom = removeRoom;
+
     function createRoom(name) {
         console.log('teste');
         RoomService.createRoom(name).$loaded().then(function(room) {
@@ -34,5 +36,10 @@ function HomeCtrl($cookies, UserService, RoomService, RouteService) {
     function setUserName(name) {
         vm.nameEdit = false;
         vm.user.$save();
+    }
+
+    function removeRoom(roomId) {
+        vm.rooms[roomId] = null;
+        vm.rooms.$save();
     }
 }
