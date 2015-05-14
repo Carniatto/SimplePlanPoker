@@ -40,7 +40,7 @@ function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService
         } else {
             vm.room.users[UserService.current.$id].vote = card;
         }
-        vm.user = RoomService.users[UserService.current.$id];
+        vm.user = vm.room.users[UserService.current.$id];
         vm.room.$save();
     }
 
