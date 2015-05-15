@@ -1,5 +1,7 @@
 /* app css stylesheet */
-
+* {
+  box-sizing: border-box;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -33,33 +35,39 @@ h2 {
   text-align: center;
 }
 
-.pokerCard {
+.deckContainer{
+  height: 400px;
   position: relative;
-  margin-left: -75px;
-  float: left;
+}
+
+.pokerCard {
   border: 6px solid black;
   width: 140px;
   height: 200px;
   border-radius: 10px;
   background-color: royalblue;
+  transform-origin: left bottom;
   transition: all;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  -webkit-user-select: none;
 }
 
-.pokerCard:first-child{
-  margin-left: 0;
+.pokerCard.front{
+    z-index: 99;
 }
 
 .pokerCard:hover{
   cursor: pointer;
-  z-index: 99;
   background-color: firebrick;
-  bottom: 30px;
 }
+
 .pokerCard.selected{
-  z-index: 99;
   background-color: firebrick;
-  bottom: 30px;
+  transform: translate(-70px,70px) !important;
+  transform-origin: center center;
 }
 
 .pokerCard .ribbon {
@@ -77,7 +85,7 @@ h2 {
   width: 23px;
   height: 23px;
   top: -11px;
-  left: 0px;
+  left: -5px;
   background-color: #fff;
 }
 .pokerCard .ribbonValue {
@@ -88,15 +96,22 @@ h2 {
   font-size: 12px;
   position: absolute;
   top: 19px;
-  left: 18px;
+  left: 13px;
 }
 .pokerCard .value {
   position: absolute;
   color: white;
   font-size: 60px;
   font-weight: bold;
-  width: 130px;
-  top: 66px;
+  width: 140px;
+  top: 70px;
   left: 0px;
   text-align: center;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
