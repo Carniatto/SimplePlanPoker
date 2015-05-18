@@ -17,7 +17,7 @@
                 <h1>{{room.room.name}}</h1>
                 <br />
                 <div class="deckContainer">
-                    <deck cards="room.cards" selected="room.room.users[room.user.$id].vote" closeable="true" selection="room.selectCard"/>
+                    <deck cards="room.cards" selected="room.room.users[room.user.$id].vote" closeable="true" selection="room.selectCard(value)"/>
                 </div>
                 <h1>{{data.text}}</h1>
             </div>

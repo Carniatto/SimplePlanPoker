@@ -35,8 +35,9 @@ angular.module('ppo')
                         scope.selected = value;
                     }
                     if (!!attrs.selection) {
-                        var express = scope.selection();
-                        express(value);
+                        // var express = scope.selection();
+                        // express(value);
+                        scope.selection({value:value});
                     }
                 }
             };
