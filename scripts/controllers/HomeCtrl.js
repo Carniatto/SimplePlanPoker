@@ -31,7 +31,7 @@ function HomeCtrl($cookies, UserService, RoomService, RouteService, currentUser,
     function createRoom(name) {
         RoomService
             .createRoom(name)
-            .success(function(room) {
+            .then(function(room) {
                 vm.rooms = room;
                 vm.joinRoom(room.$id);
         });
