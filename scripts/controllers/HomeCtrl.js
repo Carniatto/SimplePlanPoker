@@ -4,14 +4,21 @@ angular.module('ppo')
 
 .controller('HomeCtrl', HomeCtrl);
 
-HomeCtrl.$inject = ['$cookies', 'UserService', 'RoomService', 'RouteService'];
+HomeCtrl.$inject = ['$cookies', 'UserService', 'RoomService', 'RouteService', 'currentUser', 'rooms'];
 
-function HomeCtrl($cookies, UserService, RoomService, RouteService) {
+HomeCtrl.loadRooms = function(RoomService){
+    return RoomService.getRooms();
+}
+HomeCtrl.loadUser = function(UserService){
+    return UserService.getCurrentUser();
+}
+
+function HomeCtrl($cookies, UserService, RoomService, RouteService, currentUser, rooms) {
     var vm = this;
 
-    vm.user = UserService.current;
+    vm.user = currentUser;
 
-    vm.rooms = RoomService.getRooms();
+    vm.rooms = rooms;
 
     vm.createRoom = createRoom;
 
@@ -22,10 +29,11 @@ function HomeCtrl($cookies, UserService, RoomService, RouteService) {
     vm.removeRoom = removeRoom;
 
     function createRoom(name) {
-        console.log('teste');
-        RoomService.createRoom(name).$loaded().then(function(room) {
-            vm.rooms = room;
-            vm.joinRoom(room.$id);
+        RoomService
+            .createRoom(name)
+            .success(function(room) {
+                vm.rooms = room;
+                vm.joinRoom(room.$id);
         });
     }
 

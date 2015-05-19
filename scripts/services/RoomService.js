@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('ppo')
-
-.service('RoomService', RoomService);
+angular
+    .module('ppo')
+    .service('RoomService', RoomService);
 
 RoomService.$inject = ['$firebaseObject', 'fbRef'];
 
@@ -18,7 +18,7 @@ function RoomService( $firebaseObject, fbRef) {
         service.getRoom = getRoom;
 
         function getRooms() {
-            return $firebaseObject(service.ref);
+            return $firebaseObject(service.ref).$loaded();
         }
 
         function createRoom(name) {
@@ -27,10 +27,10 @@ function RoomService( $firebaseObject, fbRef) {
                 'type': '',
                 'users': []
             });
-            return $firebaseObject(reff);
+            return $firebaseObject(reff).$loaded();
         }
 
         function getRoom(roomId) {
-            return $firebaseObject(service.ref.child(roomId));
+            return $firebaseObject(service.ref.child(roomId)).$loaded();
         }
 }
