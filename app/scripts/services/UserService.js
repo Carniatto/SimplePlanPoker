@@ -2,7 +2,7 @@
 
 angular
 
-    .module('ppo')
+.module('ppo')
     .service('UserService', UserService);
 
 UserService.$inject = ['$firebaseObject', '$cookies', 'fbRef'];
@@ -16,6 +16,8 @@ function UserService($firebaseObject, $cookies, fbRef) {
 
     service.getUser = getUser;
 
+    service.getCurrentUser = getCurrentUser;
+
     function createUser(name) {
         var reff = service.ref.push({
             'name': name
@@ -24,21 +26,24 @@ function UserService($firebaseObject, $cookies, fbRef) {
     }
 
     function getUser(userId) {
-        return $firebaseObject(service.ref.child(userId));
+        var user = $firebaseObject(service.ref.child(userId)).$loaded();
+        console.log(user);
+        return user;
     }
 
-    function init() {
+    function getCurrentUser() {
         var uid = $cookies.userId;
         if (!uid) {
-            var user = service.createUser(' ');
-            $cookies.userId = user.$id;
-            user.name = 'anonymous' + user.$id;
-            user.$save();
-            service.current = user;
+            var user = service.createUser(' ').$loaded();
+            user.then(function(data) {
+                $cookies.userId = data.$id;
+                data.name = 'anonymous' + data.$id;
+                data.$save();
+                service.current = data;
+            });
+            return user;
         } else {
-            service.current = service.getUser(uid);
+            return service.getUser(uid);
         }
     }
-
-    init();
 }

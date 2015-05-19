@@ -4,26 +4,32 @@ angular.module('ppo')
 
 .controller('RoomCtrl', RoomCtrl);
 
-RoomCtrl.$inject = ['$cookies', '$routeParams', 'RoomService', 'UserService', 'RouteService'];
+RoomCtrl.$inject = ['$cookies', '$routeParams', 'RoomService', 'UserService', 'RouteService', 'room','currentUser'];
 
-function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService) {
+RoomCtrl.loadRoom = function($route, RoomService) {
+    return RoomService.getRoom($route.current.params.roomId);
+}
+
+RoomCtrl.loadUser = function(UserService){
+    return UserService.getCurrentUser();
+}
+
+function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService, room, currentUser) {
     var vm = this;
 
-    RoomService.getRoom($routeParams.roomId).$loaded().then(function(room) {
-        vm.room = room;
-        if (!room.users) {
-            room.users = {};
-        }
-        room.users[UserService.current.$id] = UserService.current;
-        if (!room.owner) {
-            room.owner = UserService.current.$id;
-        }
-        vm.user = room.users[UserService.current.$id];
-        room.$save();
+    vm.room = room;
+    if (!room.users) {
+        room.users = {};
+    }
+    room.users[currentUser.$id] = currentUser;
+    if (!room.owner) {
+        room.owner = currentUser.$id;
+    }
+    vm.user = room.users[currentUser.$id];
+    room.$save();
 
-    });
 
-    vm.cards = ["?","0", "1/2", "1", "2", "3", "5", "8", "13", "20"];
+    vm.cards = ["?", "0", "1/2", "1", "2", "3", "5", "8", "13", "20"];
 
     vm.selectCard = selectCard;
 
@@ -36,10 +42,10 @@ function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService
     vm.kickUser = kickUser;
 
     function selectCard(card) {
-        if(vm.room.users[UserService.current.$id].vote === card){
-            vm.room.users[UserService.current.$id].vote = '';
+        if (vm.room.users[currentUser.$id].vote === card) {
+            vm.room.users[currentUser.$id].vote = '';
         } else {
-            vm.room.users[UserService.current.$id].vote = card;
+            vm.room.users[currentUser.$id].vote = card;
         }
         vm.room.$save();
     }
@@ -58,9 +64,9 @@ function RoomCtrl($cookies, $routeParams, RoomService, UserService, RouteService
     }
 
     function exitRoom() {
-        delete vm.room.users[UserService.current.$id];
-        if (vm.room.owner === UserService.current.$id) {
-            if(!Object.keys(vm.room.users).length){
+        delete vm.room.users[currentUser.$id];
+        if (vm.room.owner === currentUser.$id) {
+            if (!Object.keys(vm.room.users).length) {
                 vm.room.owner = '';
             } else {
                 vm.room.owner = Object.keys(vm.room.users)[0];

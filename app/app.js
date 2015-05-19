@@ -15,13 +15,21 @@ function config($routeProvider) {
         $routeProvider.when('/home', {
             templateUrl: 'views/home.html',
             controller: 'HomeCtrl',
-            controllerAs: 'home'
+            controllerAs: 'home',
+            resolve: {
+                rooms: HomeCtrl.loadRooms,
+                currentUser: HomeCtrl.loadUser
+            }
         });
 
         $routeProvider.when('/room/:roomId', {
             templateUrl: 'views/room.html',
             controller: 'RoomCtrl',
-            controllerAs: 'room'
+            controllerAs: 'room',
+            resolve: {
+                room: RoomCtrl.loadRoom,
+                currentUser: RoomCtrl.loadUser
+            }
         });
     }
 
