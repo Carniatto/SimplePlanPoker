@@ -1,17 +1,22 @@
 <div>
     <div class="container">
         <div class="row  row-eq-height">
-            <div class="col-sm-3  col-sm-offset-1 bg-danger">
+            <div class="col-sm-3  col-sm-offset-1">
                 <div class="row">
-                    <div ng-repeat="(k,u) in room.room.users">
-                        <div class="glyphicon glyphicon-tower text-warning" ng-show="room.room.owner == k"></div>
-                        <div class="glyphicon glyphicon-user" ng-hide="room.room.owner == k"></div>
-                        {{u.name}}
-                        <div class="glyphicon glyphicon-ok" ng-show="u.vote"></div>
-                        <div class="glyphicon glyphicon-remove" ng-click="room.kickUser(k)" ng-show="room.user.$id == room.room.owner && room.user.$id != k"></div>
-                        <div ng-show="room.room.revealVote">{{u.vote}}</div>
+                    <div ng-repeat="(k,u) in room.room.users" class="sidebar-user" ng-class="{'selected': u.vote}">
+                        <div class="name">
+                            <div class="glyphicon glyphicon-tower" ng-show="room.room.owner == k"></div>
+                            <div class="glyphicon glyphicon-user" ng-hide="room.room.owner == k"></div>
+                            {{u.name}}
+                            <div class="glyphicon glyphicon-remove" ng-click="room.kickUser(k)" ng-show="room.user.$id == room.room.owner && room.user.$id != k"></div>
+                        </div>
+                        <div class="vote" ng-class="{'visible':room.room.revealVote}">
+                            <div>{{u.vote}}</div>
+                        </div>
                     </div>
+
                 </div>
+
             </div>
             <div class="col-sm-6">
                 <h1>{{room.room.name}}</h1>
