@@ -2,7 +2,7 @@
 
 angular.module('ppo')
 
-.directive('deck', function() {
+.directive('deck', [function() {
     return {
         restrict: 'E',
         scope: {
@@ -52,4 +52,4 @@ angular.module('ppo')
             }
         }
     };
-});
+}]);
