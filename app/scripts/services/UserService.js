@@ -37,7 +37,7 @@ function UserService($firebaseObject, $cookies, fbRef) {
             var user = service.createUser(' ').$loaded();
             user.then(function(data) {
                 $cookies.userId = data.$id;
-                data.name = 'anonymous' + data.$id;
+                data.name = 'new';
                 data.$save();
                 service.current = data;
             });

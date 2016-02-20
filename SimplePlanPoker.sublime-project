@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+
+	"settings": {
+		"AngularJS": {
+			"exclude_dirs": [
+				"./app/build/*",
+				"./build/*"
+			]
+		}
+	},
+
+	"ternjs":{
+		"include": ["app/scripts/**"],
+		"libs": [
+			"browser",
+			"jquery",
+			"ecma5",
+			"underscore"
+		],
+		"plugins": {
+			"angular":{
+					"baseURL": "./js"
+			}			
+		}
+	}
+}

@@ -1,0 +1,827 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ngdir",
+				"ngDir_pane	AngularJS"
+			],
+			[
+				"current",
+				"currentUser"
+			],
+			[
+				"route",
+				"angular: $routeProvider"
+			],
+			[
+				"ta",
+				"ta:c	text-align:center"
+			],
+			[
+				"req",
+				"require〔function〕"
+			],
+			[
+				"c",
+				"$controller	AngularJS"
+			],
+			[
+				"dis",
+				"ng-disabled	AngularJS"
+			],
+			[
+				"scope",
+				"$scope	AngularJS"
+			],
+			[
+				"coo",
+				"$cookieStore	AngularJS"
+			],
+			[
+				"function",
+				"new Function()	Function"
+			],
+			[
+				"fun",
+				"function(){\n	$0\n})();	(function(){\n	$0\n})();"
+			],
+			[
+				"clog",
+				"console.log('$0');"
+			],
+			[
+				"name",
+				"name"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/scripts/controllers/HomeCtrl.js",
+			"settings":
+			{
+				"buffer_size": 1119,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<div ng-cloak>\n    <div class=\"container\">\n        <div class=\"row\">\n        <div class=\"col-sm-12 text-center\" ng-hide=\"home.nameEdit\">\n            <h2 ng-hide=\"home.nameEdit\">User Name: {{home.user.name}}</h2>\n            <a href=\"\" ng-click=\"home.nameEdit=true\">change</a>\n        </div>\n            <div class=\"col-sm-12 text-center\" ng-show=\"home.nameEdit\">\n                <input type=\"text\" placeholder=\"type your name\" ng-model=\"home.user.name\"></input>\n                <button type=\"button\" class=\"btn btn-primary\" ng-click=\"home.setUserName(home.user.name)\">change</button>\n             </div>\n        </div>\n        <br>\n        <div class=\"row\">\n            <div class=\"col-sm-12 text-center\">\n                <input type=\"text\" placeholder=\"type room name\" ng-model=\"home.room.name\"></input>\n                <button type=\"button\" class=\"btn btn-primary\" ng-click=\"home.createRoom(home.room.name)\">Create a Room</button>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\" col-sm-4 col-sm-offset-4\">\n                <table class=\"table\">\n                    <thead>\n                        <ngdi\n                        <tr class=\"text-center\">\n                            <th>Room Name</th>\n                            <th>#</th>\n                            <th>#</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr ng-repeat=\"(id, room) in home.rooms\">\n                            <td>{{room.name}}</td>\n                            <td>\n                                 <button type=\"button\" class=\"btn btn-primary\" ng-click=\"home.joinRoom(id)\">Join</button>\n                            </td>\n                            <td>\n                                <div class=\"glyphicon glyphicon-remove text-danger\" ng-click=\"home.removeRoom(id)\"></div>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n        </div>\n    </div>\n</div>\n<!--\n<div ng-hide=\"true\">\n    <form class=\"form-signin\" role=\"form\">\n        <input ng-model=\"user.email\" type=\"email\" class=\"form-control\" placeholder=\"Email address\" required=\"\" autofocus=\"\">\n        <input ng-model=\"user.password\" type=\"password\" class=\"form-control\" placeholder=\"Password\" required=\"\">\n        <label class=\"checkbox\">\n            <a href=\"#\"> Sign Up</a>\n        </label>\n        <button type=\"button\" ng-click=\"SignIn($event)\" class=\"btn btn-lg btn-primary btn-block\">SignIn</button>\n    </form>\n</div> -->",
+			"file": "app/views/home.html",
+			"file_size": 2532,
+			"file_write_time": 130765449540000000,
+			"settings":
+			{
+				"buffer_size": 2562,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/directives/DeckDirective.js",
+			"settings":
+			{
+				"buffer_size": 1811,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SimplePlanPoker.sublime-project",
+			"settings":
+			{
+				"buffer_size": 336,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "index",
+		"selected_items":
+		[
+			[
+				"index",
+				"AngularJS: Rebuild Search Index"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"anguar",
+				"AngularJS: Rebuild Search Index"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"codein",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"sublimehi",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"syjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"jshi",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"jsh",
+				"JSHint: Set Plugin Options"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"synjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"syntajs",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"syja",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"pack ls",
+				"Package Control: List Packages"
+			],
+			[
+				"sbc",
+				"SBC: Settings – User"
+			],
+			[
+				"sbc settings user",
+				"SBC: Settings – User"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"sass",
+				"SassBeautify: Convert from CSS to current type"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"syntaxja",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/carniatto/dev/SimplePlanPoker"
+	],
+	"file_history":
+	[
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/carniatto/dev/SimplePlanPoker/SimplePlanPoker.sublime-project",
+		"/Users/carniatto/dev/SimplePlanPoker/.publish/views/room.html",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/User/sbc-setting.sublime-settings",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/Better Completion/sbc-setting.sublime-settings",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/controllers/HomeCtrl.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/controllers/RoomCtrl.js",
+		"/Users/carniatto/dev/SimplePlanPoker/.jshintrc",
+		"/Users/carniatto/dev/SimplePlanPoker/app/app.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/views/home.html",
+		"/Users/carniatto/dev/SimplePlanPoker/Gulpfile.js",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/carniatto/dev/SimplePlanPoker/.jshintignore",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/Users/carniatto/Library/Application Support/Sublime Text 3/Packages/AutoCompleteJS/AutoCompleteJS.sublime-settings",
+		"/Users/carniatto/dev/SimplePlanPoker/app/app.css",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/services/UserService.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/controllers/AppCtrl.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/services/RoomService.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/index.html",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/services/FirebaseService.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/views/room.html",
+		"/Users/carniatto/dev/SimplePlanPoker/.gitignore",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/directives/DeckDirective.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/scripts/main.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/room/room.html",
+		"/Users/carniatto/dev/SimplePlanPoker/app/js/bundle.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/home/home.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/room/room.js",
+		"/Users/carniatto/dev/SimplePlanPoker/app/home/home.html",
+		"/Users/carniatto/dev/SimplePlanPoker/package.json",
+		"/Users/carniatto/Documents/personal_projects/Teste/angular-material-seed-master/node_modules/grunt-google-cdn/node_modules/bower/node_modules/bower-registry-client/test/core/util/Cache.js",
+		"/Users/carniatto/Documents/personal_projects/Teste/angular-material-seed-master/node_modules/karma/node_modules/useragent/test/fixtures/pgts.yaml",
+		"/Users/carniatto/dev/ionic/demo/myApp/gulpfile.js",
+		"/Users/carniatto/dev/think-server-configurator/tsconfig/WebContent/node_modules/grunt/node_modules/glob/test/pause-resume.js",
+		"/Users/carniatto/dev/think-server-configurator/tsconfig/WebContent/package.json"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"directive",
+			"Default",
+			"UserService.current",
+			"user",
+			"fire",
+			"firebase",
+			"route",
+			"fp",
+			"wiredep",
+			"favicon.ico",
+			".ico"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/scripts/controllers/HomeCtrl.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								637,
+								637
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "a974974e",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"spell_check": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1140,
+								1140
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"bs_sintax": "html",
+							"buffer_scroll_name": "4f6eb5ef",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"spell_check": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/scripts/directives/DeckDirective.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1811,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1775,
+								1775
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "affb650e",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"spell_check": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 29.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "SimplePlanPoker.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"bs_sintax": "json",
+							"buffer_scroll_name": "caee20c0",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"spell_check": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "SimplePlanPoker.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"roo",
+				".publish/views/room.html"
+			],
+			[
+				"",
+				"app/scripts/controllers/HomeCtrl.js"
+			],
+			[
+				"prodjs",
+				"app/scripts/controllers/productedit.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 299.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
