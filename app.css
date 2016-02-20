@@ -147,3 +147,42 @@ h2 {
     from { -webkit-transform: rotate(0deg);}
     to { -webkit-transform: rotate(360deg);}
 }
+
+@-webkit-keyframes flip {
+    0% { transform: rotateY(180deg);}
+    80% { transform: rotateY(0deg);}
+    100% { transform: rotateY(0deg);}
+}
+
+.vote {
+    width: 30%;
+    background: white;
+    color: royalblue;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+    transition: 1s all;
+    transform: rotateY(180deg);
+    transform-origin: right center;
+    backface-visibility: hidden;
+}
+
+.visible {
+    transform: rotateY(0deg);
+}
+
+.name {
+    width: 70%;
+}
+
+.sidebar-user {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border: 1px solid darkred;
+    display: flex;
+}
+.selected {
+    background: royalblue;
+    color: white
+}
